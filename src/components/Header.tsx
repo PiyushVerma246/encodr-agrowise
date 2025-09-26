@@ -1,35 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { Sprout, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+        <Link to="/" className="flex items-center space-x-2 group">
+          <div className="h-8 w-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <Sprout className="h-5 w-5 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-primary">AgroWise</h1>
+            <h1 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">AgroWise</h1>
             <p className="text-xs text-muted-foreground hidden sm:block">Where Agriculture Meets Technology</p>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#features" className="text-foreground hover:text-primary transition-colors">Features</a>
-          <a href="#dashboard" className="text-foreground hover:text-primary transition-colors">Dashboard</a>
-          <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+          <Link to="/features" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/features' ? 'text-primary font-semibold' : ''}`}>Features</Link>
+          <Link to="/dashboard" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/dashboard' ? 'text-primary font-semibold' : ''}`}>Dashboard</Link>
+          <Link to="/about" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/about' ? 'text-primary font-semibold' : ''}`}>About</Link>
+          <Link to="/contact" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/contact' ? 'text-primary font-semibold' : ''}`}>Contact</Link>
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center space-x-3">
-          <Button variant="ghost">Login</Button>
-          <Button variant="hero">Get Started</Button>
+          <Link to="/login">
+            <Button variant="ghost">Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button variant="hero">Get Started</Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -43,14 +50,19 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur">
+        <div className="md:hidden border-t bg-background/95 backdrop-blur animate-slide-in-right">
           <nav className="container mx-auto px-4 py-4 space-y-4">
-            <a href="#features" className="block py-2 text-foreground hover:text-primary transition-colors">Features</a>
-            <a href="#dashboard" className="block py-2 text-foreground hover:text-primary transition-colors">Dashboard</a>
-            <a href="#contact" className="block py-2 text-foreground hover:text-primary transition-colors">Contact</a>
+            <Link to="/features" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Features</Link>
+            <Link to="/dashboard" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Dashboard</Link>
+            <Link to="/about" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/contact" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             <div className="pt-4 space-y-2">
-              <Button variant="ghost" className="w-full">Login</Button>
-              <Button variant="hero" className="w-full">Get Started</Button>
+              <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="ghost" className="w-full">Login</Button>
+              </Link>
+              <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="hero" className="w-full">Get Started</Button>
+              </Link>
             </div>
           </nav>
         </div>
