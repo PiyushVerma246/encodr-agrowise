@@ -11,6 +11,12 @@ import DashboardPage from "./pages/DashboardPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import WeatherAdvisoryPage from "./pages/WeatherAdvisoryPage";
+import CropAdvisoryPage from "./pages/CropAdvisoryPage";
+import PestDetectionPage from "./pages/PestDetectionPage";
+import MarketPricesPage from "./pages/MarketPricesPage";
+import GovernmentSchemesPage from "./pages/GovernmentSchemesPage";
+import PMKisanSchemePage from "./pages/PMKisanSchemePage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +34,12 @@ const App = () => (
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/weather" element={<WeatherAdvisoryPage />} />
+          <Route path="/crop-advisory" element={<CropAdvisoryPage />} />
+          <Route path="/pest-detection" element={<PestDetectionPage />} />
+          <Route path="/market-prices" element={<MarketPricesPage />} />
+          <Route path="/government-schemes" element={<GovernmentSchemesPage />} />
+          <Route path="/schemes/pm-kisan" element={<PMKisanSchemePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

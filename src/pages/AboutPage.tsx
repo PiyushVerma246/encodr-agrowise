@@ -63,7 +63,7 @@ const AboutPage = () => {
               empowering farmers to make data-driven decisions for sustainable and profitable agriculture.
             </p>
             <Badge variant="secondary" className="px-6 py-2 text-base">
-              Founded in 2024 • Made in India
+              Founded in 2025 • Built by Team ENCODR
             </Badge>
           </div>
         </div>

@@ -24,6 +24,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/features" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/features' ? 'text-primary font-semibold' : ''}`}>Features</Link>
+          <Link to="/government-schemes" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/government-schemes' ? 'text-primary font-semibold' : ''}`}>Schemes</Link>
           <Link to="/dashboard" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/dashboard' ? 'text-primary font-semibold' : ''}`}>Dashboard</Link>
           <Link to="/about" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/about' ? 'text-primary font-semibold' : ''}`}>About</Link>
           <Link to="/contact" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/contact' ? 'text-primary font-semibold' : ''}`}>Contact</Link>
@@ -53,6 +54,7 @@ const Header = () => {
         <div className="md:hidden border-t bg-background/95 backdrop-blur animate-slide-in-right">
           <nav className="container mx-auto px-4 py-4 space-y-4">
             <Link to="/features" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Features</Link>
+            <Link to="/government-schemes" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Schemes</Link>
             <Link to="/dashboard" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Dashboard</Link>
             <Link to="/about" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link to="/contact" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
