@@ -6,8 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Lightbulb, Leaf, Droplets, MapPin } from "lucide-react";
+import { Lightbulb, Leaf, Droplets, MapPin, TrendingUp } from "lucide-react";
 import { useState } from "react";
+import heroImage from "@/assets/hero-agriculture.jpg";
 
 const CropAdvisoryPage = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ const CropAdvisoryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <section className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
@@ -75,14 +76,14 @@ const CropAdvisoryPage = () => {
                       type="text"
                       placeholder="e.g., Pune, Maharashtra"
                       value={formData.location}
-                      onChange={(e) => setFormData({...formData, location: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       required
                     />
                   </div>
 
                   <div>
                     <Label htmlFor="soilType">Soil Type</Label>
-                    <Select onValueChange={(value) => setFormData({...formData, soilType: value})}>
+                    <Select onValueChange={(value) => setFormData({ ...formData, soilType: value })}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select soil type" />
                       </SelectTrigger>
@@ -99,7 +100,7 @@ const CropAdvisoryPage = () => {
 
                   <div>
                     <Label htmlFor="irrigationType">Irrigation Type</Label>
-                    <Select onValueChange={(value) => setFormData({...formData, irrigationType: value})}>
+                    <Select onValueChange={(value) => setFormData({ ...formData, irrigationType: value })}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select irrigation method" />
                       </SelectTrigger>
@@ -119,7 +120,7 @@ const CropAdvisoryPage = () => {
                       type="number"
                       placeholder="e.g., 2.5"
                       value={formData.landSize}
-                      onChange={(e) => setFormData({...formData, landSize: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, landSize: e.target.value })}
                       required
                     />
                   </div>
@@ -131,7 +132,7 @@ const CropAdvisoryPage = () => {
                       type="text"
                       placeholder="e.g., Wheat, Rice, Cotton"
                       value={formData.previousCrop}
-                      onChange={(e) => setFormData({...formData, previousCrop: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, previousCrop: e.target.value })}
                     />
                   </div>
 
@@ -142,7 +143,7 @@ const CropAdvisoryPage = () => {
                       type="number"
                       placeholder="e.g., 50000"
                       value={formData.budget}
-                      onChange={(e) => setFormData({...formData, budget: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       required
                     />
                   </div>
@@ -221,12 +222,38 @@ const CropAdvisoryPage = () => {
                 </Card>
               </div>
             ) : (
-              <div className="flex items-center justify-center h-64 animate-fade-in">
-                <div className="text-center">
-                  <Leaf className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">
-                    Fill in your farm details to get personalized crop recommendations
+              <div className="flex flex-col items-center justify-center h-full animate-fade-in p-8 bg-muted/30 rounded-xl border-2 border-dashed border-muted-foreground/25">
+                <div className="relative mb-8 group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                  <img
+                    src={heroImage}
+                    alt="Smart Farming"
+                    className="relative w-full max-w-md rounded-xl shadow-lg transform transition duration-500 hover:scale-[1.02]"
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-semibold text-primary">AI Confidence</span>
+                      <span className="text-success font-bold">99.7%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center max-w-md">
+                  <h3 className="text-2xl font-bold text-primary mb-3">Ready to Optimize Your Yield?</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Our advanced AI analyzes soil health, weather patterns, and market trends to suggest the most profitable crops for your specific land conditions.
                   </p>
+
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center space-x-2 text-muted-foreground bg-white/50 p-2 rounded-lg">
+                      <TrendingUp className="h-4 w-4 text-accent" />
+                      <span>Higher Profits</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-muted-foreground bg-white/50 p-2 rounded-lg">
+                      <Leaf className="h-4 w-4 text-success" />
+                      <span>Sustainable</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}

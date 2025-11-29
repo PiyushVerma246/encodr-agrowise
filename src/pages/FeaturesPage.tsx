@@ -3,12 +3,12 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  Lightbulb, 
-  CloudRain, 
-  Bug, 
-  TrendingUp, 
-  FileText, 
+import {
+  Lightbulb,
+  CloudRain,
+  Bug,
+  TrendingUp,
+  FileText,
   Smartphone,
   ArrowRight,
   Brain,
@@ -16,9 +16,10 @@ import {
   Shield,
   Zap
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const FeaturesPage = () => {
+  const navigate = useNavigate();
   const mainFeatures = [
     {
       icon: <Lightbulb className="h-8 w-8" />,
@@ -27,7 +28,8 @@ const FeaturesPage = () => {
       features: ["Soil analysis integration", "Climate pattern recognition", "Yield prediction modeling", "Fertilizer optimization"],
       color: "text-success",
       bgColor: "bg-success/10",
-      borderColor: "border-success/20"
+      borderColor: "border-success/20",
+      link: "/crop-advisory"
     },
     {
       icon: <CloudRain className="h-8 w-8" />,
@@ -36,7 +38,8 @@ const FeaturesPage = () => {
       features: ["7-day weather forecast", "Rainfall prediction", "Irrigation alerts", "Storm warnings"],
       color: "text-accent",
       bgColor: "bg-accent/10",
-      borderColor: "border-accent/20"
+      borderColor: "border-accent/20",
+      link: "/weather"
     },
     {
       icon: <Bug className="h-8 w-8" />,
@@ -45,7 +48,8 @@ const FeaturesPage = () => {
       features: ["Image recognition AI", "Disease database", "Treatment recommendations", "Prevention guides"],
       color: "text-warning",
       bgColor: "bg-warning/10",
-      borderColor: "border-warning/20"
+      borderColor: "border-warning/20",
+      link: "/pest-detection"
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
@@ -54,7 +58,8 @@ const FeaturesPage = () => {
       features: ["Live price updates", "Trend analysis", "Profit optimization", "Market forecasting"],
       color: "text-crop-gold",
       bgColor: "bg-crop-gold/10",
-      borderColor: "border-crop-gold/20"
+      borderColor: "border-crop-gold/20",
+      link: "/market-prices"
     },
     {
       icon: <FileText className="h-8 w-8" />,
@@ -63,7 +68,8 @@ const FeaturesPage = () => {
       features: ["Scheme updates", "Eligibility checker", "Application assistance", "Document guidance"],
       color: "text-primary",
       bgColor: "bg-primary/10",
-      borderColor: "border-primary/20"
+      borderColor: "border-primary/20",
+      link: "/government-schemes"
     },
     {
       icon: <Smartphone className="h-8 w-8" />,
@@ -102,7 +108,7 @@ const FeaturesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
@@ -111,7 +117,7 @@ const FeaturesPage = () => {
               Complete Agricultural Technology Suite
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Discover how AgroWise transforms traditional farming with cutting-edge AI, IoT, 
+              Discover how AgroWise transforms traditional farming with cutting-edge AI, IoT,
               and data analytics to boost your productivity, reduce costs, and maximize profits.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -132,17 +138,18 @@ const FeaturesPage = () => {
               Six Powerful Modules for Smart Farming
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Each module is designed to address specific farming challenges with 
+              Each module is designed to address specific farming challenges with
               advanced technology and farmer-friendly interfaces.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {mainFeatures.map((feature, index) => (
-              <Card 
-                key={index} 
-                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 ${feature.borderColor} bg-white/80 backdrop-blur animate-scale-in`}
+              <Card
+                key={index}
+                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 ${feature.borderColor} bg-white/80 backdrop-blur animate-scale-in ${feature.link ? 'cursor-pointer' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => feature.link && navigate(feature.link)}
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between">
@@ -189,15 +196,15 @@ const FeaturesPage = () => {
               Built on Advanced Technology
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our platform leverages the latest in agricultural technology to deliver 
+              Our platform leverages the latest in agricultural technology to deliver
               reliable, scalable, and secure solutions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {techFeatures.map((feature, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -225,18 +232,18 @@ const FeaturesPage = () => {
                 Ready to Transform Your Farming?
               </h2>
               <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
-                Join thousands of farmers who are already using AgroWise to boost their productivity, 
+                Join thousands of farmers who are already using AgroWise to boost their productivity,
                 reduce costs, and increase profits with smart technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/crop-advisory">
-                  <Button variant="hero" size="lg" className="bg-white text-primary hover:bg-white/90">
+                  <Button variant="hero" size="lg" className="bg-white text-primary hover:bg-white">
                     Try Crop Advisory
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/weather">
-                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  <Button variant="outline" size="lg" className="bg-transparent text-primary hover:bg-transparent hover:text-white hover:border-white">
                     Check Weather
                   </Button>
                 </Link>

@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Eye, EyeOff, Sprout } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
@@ -16,7 +16,7 @@ const LoginPage = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate login process
     setTimeout(() => {
       setIsLoading(false);
@@ -31,9 +31,7 @@ const LoginPage = () => {
         {/* Logo */}
         <div className="text-center mb-8 animate-fade-in">
           <Link to="/" className="inline-flex items-center space-x-2 group">
-            <div className="h-12 w-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Sprout className="h-7 w-7 text-white" />
-            </div>
+            <img src="/logo.png" alt="AgroWise" className="h-14 w-14 rounded-xl object-contain group-hover:scale-110 transition-transform duration-300" />
             <div>
               <h1 className="text-2xl font-bold text-primary">AgroWise</h1>
               <p className="text-sm text-muted-foreground">Where Agriculture Meets Technology</p>
@@ -49,7 +47,7 @@ const LoginPage = () => {
               Sign in to your AgroWise account to continue your farming journey
             </CardDescription>
           </CardHeader>
-          
+
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
@@ -64,7 +62,7 @@ const LoginPage = () => {
                   className="h-11"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-medium">Password</Label>
                 <div className="relative">

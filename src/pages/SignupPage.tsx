@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Eye, EyeOff, Sprout, Check } from "lucide-react";
+import { Eye, EyeOff, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SignupPage = () => {
@@ -28,14 +28,14 @@ const SignupPage = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Basic validation
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords don't match!");
       setIsLoading(false);
       return;
     }
-    
+
     // Simulate signup process
     setTimeout(() => {
       setIsLoading(false);
@@ -60,9 +60,7 @@ const SignupPage = () => {
           <div className="hidden md:block animate-fade-in">
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 mb-4">
-                <div className="h-12 w-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                  <Sprout className="h-7 w-7 text-white" />
-                </div>
+                <img src="/logo.png" alt="AgroWise" className="h-14 w-14 rounded-xl object-contain" />
                 <div>
                   <h1 className="text-2xl font-bold text-primary">AgroWise</h1>
                 </div>
@@ -75,8 +73,8 @@ const SignupPage = () => {
 
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex items-center space-x-3 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -98,7 +96,7 @@ const SignupPage = () => {
                   Start your smart farming journey today
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent>
                 <form onSubmit={handleSignup} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
@@ -168,7 +166,7 @@ const SignupPage = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="password" className="text-sm font-medium">Password</Label>
                     <div className="relative">

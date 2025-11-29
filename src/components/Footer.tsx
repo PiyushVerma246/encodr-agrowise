@@ -1,4 +1,4 @@
-import { Sprout, Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,16 +8,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-gradient-to-br from-accent to-crop-gold rounded-lg flex items-center justify-center">
-                <Sprout className="h-5 w-5 text-white" />
-              </div>
+              <img src="/logo.png" alt="AgroWise" className="h-10 w-10 rounded-lg object-contain" />
               <div>
                 <h3 className="text-xl font-bold">AgroWise</h3>
                 <p className="text-sm text-primary-foreground/80">Where Agriculture Meets Technology</p>
               </div>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Empowering farmers with cutting-edge technology and AI-driven insights 
+              Empowering farmers with cutting-edge technology and AI-driven insights
               for sustainable and profitable agriculture.
             </p>
             <div className="flex space-x-4">

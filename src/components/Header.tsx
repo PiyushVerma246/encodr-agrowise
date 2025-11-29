@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sprout, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -12,9 +12,7 @@ const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 group">
-          <div className="h-8 w-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Sprout className="h-5 w-5 text-white" />
-          </div>
+          <img src="/logo.png" alt="AgroWise" className="h-10 w-10 rounded-lg object-contain group-hover:scale-110 transition-transform duration-300" />
           <div>
             <h1 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">AgroWise</h1>
             <p className="text-xs text-muted-foreground hidden sm:block">Where Agriculture Meets Technology</p>
@@ -41,7 +39,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >

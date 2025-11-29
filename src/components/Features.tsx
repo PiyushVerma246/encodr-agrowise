@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { 
   Lightbulb, 
   CloudRain, 
@@ -89,10 +90,12 @@ const Features = () => {
                   and farming patterns to provide personalized crop recommendations that can 
                   increase your yield by up to 85%.
                 </p>
-                <Button variant="success" size="lg">
-                  Try AI Analysis
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link to="/crop-advisory">
+                  <Button variant="success" size="lg">
+                    Try AI Analysis
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </div>
               <div className="h-64 md:h-full bg-gradient-to-br from-success/20 to-primary/20 flex items-center justify-center">
                 <img src={cropAnalysisIcon} alt="Crop Analysis" className="h-32 w-32 opacity-50" />

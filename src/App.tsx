@@ -10,6 +10,7 @@ import FeaturesPage from "./pages/FeaturesPage";
 import DashboardPage from "./pages/DashboardPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import Chatbot from "./components/Chatbot";
 import NotFound from "./pages/NotFound";
 import WeatherAdvisoryPage from "./pages/WeatherAdvisoryPage";
 import CropAdvisoryPage from "./pages/CropAdvisoryPage";
@@ -43,6 +44,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Chatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
