@@ -147,7 +147,7 @@ const FeaturesPage = () => {
             {mainFeatures.map((feature, index) => (
               <Card
                 key={index}
-                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 ${feature.borderColor} bg-white/80 backdrop-blur animate-scale-in ${feature.link ? 'cursor-pointer' : ''}`}
+                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 ${feature.borderColor} dark:border-border bg-card/80 dark:bg-card backdrop-blur animate-scale-in ${feature.link ? 'cursor-pointer' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => feature.link && navigate(feature.link)}
               >

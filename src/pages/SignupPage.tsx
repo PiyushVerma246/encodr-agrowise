@@ -89,7 +89,7 @@ const SignupPage = () => {
 
           {/* Right side - Signup Form */}
           <div className="w-full animate-scale-in">
-            <Card className="shadow-xl border-0 bg-white/80 backdrop-blur">
+            <Card className="shadow-xl border border-border/50 dark:border-border bg-card/80 dark:bg-card backdrop-blur">
               <CardHeader className="text-center pb-6">
                 <CardTitle className="text-2xl font-bold text-primary">Create Your Account</CardTitle>
                 <CardDescription className="text-base">

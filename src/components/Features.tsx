@@ -73,7 +73,7 @@ const Features = () => {
 
         {/* Main Feature Highlight */}
         <div className="mb-16">
-          <Card className="overflow-hidden border-2 border-primary/20 shadow-xl bg-gradient-to-r from-white to-secondary/50">
+          <Card className="overflow-hidden border-2 border-primary/20 dark:border-primary/30 shadow-xl bg-gradient-to-r from-card to-secondary/50 dark:from-card dark:to-card">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="p-8">
                 <div className="flex items-center mb-4">
@@ -107,7 +107,7 @@ const Features = () => {
         {/* Feature Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md bg-white/80 backdrop-blur">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border/50 dark:border-border shadow-md bg-card/80 dark:bg-card backdrop-blur">
               <CardHeader className="pb-4">
                 <div className={`h-16 w-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <div className={feature.color}>

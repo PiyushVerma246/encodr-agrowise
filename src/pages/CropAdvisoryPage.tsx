@@ -230,7 +230,7 @@ const CropAdvisoryPage = () => {
                     alt="Smart Farming"
                     className="relative w-full max-w-md rounded-xl shadow-lg transform transition duration-500 hover:scale-[1.02]"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
+                  <div className="absolute bottom-4 left-4 right-4 bg-card/90 dark:bg-card backdrop-blur-sm p-3 rounded-lg shadow-sm">
                     <div className="flex items-center justify-between text-sm">
                       <span className="font-semibold text-primary">AI Confidence</span>
                       <span className="text-success font-bold">99.7%</span>
@@ -245,11 +245,11 @@ const CropAdvisoryPage = () => {
                   </p>
 
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center space-x-2 text-muted-foreground bg-white/50 p-2 rounded-lg">
+                    <div className="flex items-center space-x-2 text-muted-foreground bg-card/50 dark:bg-card/70 p-2 rounded-lg">
                       <TrendingUp className="h-4 w-4 text-accent" />
                       <span>Higher Profits</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground bg-white/50 p-2 rounded-lg">
+                    <div className="flex items-center space-x-2 text-muted-foreground bg-card/50 dark:bg-card/70 p-2 rounded-lg">
                       <Leaf className="h-4 w-4 text-success" />
                       <span>Sustainable</span>
                     </div>

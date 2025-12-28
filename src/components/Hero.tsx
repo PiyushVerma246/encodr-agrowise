@@ -8,24 +8,24 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <img
           src={heroImage}
           alt="Modern agriculture meets technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/80 dark:from-gray-900/90 dark:via-gray-800/80 dark:to-blue-900/80"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in">{/* Apply animation */}
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-            Where Agriculture 
+            Where Agriculture
             <span className="block text-crop-gold animate-float">Meets Technology</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Empowering farmers with AI-powered crop advisory, real-time weather insights, 
+            Empowering farmers with AI-powered crop advisory, real-time weather insights,
             pest diagnosis, and market intelligence. Simple technology for smarter farming.
           </p>
 

@@ -40,7 +40,7 @@ const LoginPage = () => {
         </div>
 
         {/* Login Card */}
-        <Card className="shadow-xl border-0 bg-white/80 backdrop-blur animate-scale-in">
+        <Card className="shadow-xl border border-border/50 dark:border-border bg-card/80 dark:bg-card backdrop-blur animate-scale-in">
           <CardHeader className="text-center pb-6">
             <CardTitle className="text-2xl font-bold text-primary">Welcome Back</CardTitle>
             <CardDescription className="text-base">
